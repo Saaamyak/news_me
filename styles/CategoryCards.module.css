@@ -1,0 +1,19 @@
+.spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 100%;
+}
+.categoryCards{
+    width: 100%;
+}
+.cards{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,350px));
+    gap: 20px;
+    padding: 0px 70px;
+    justify-content: center;
+    margin-bottom: 100px;
+}

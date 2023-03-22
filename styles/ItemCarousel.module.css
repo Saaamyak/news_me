@@ -1,0 +1,12 @@
+.carouselContainer{
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+}
+.carouselImage{
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+}
