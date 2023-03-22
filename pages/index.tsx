@@ -9,7 +9,7 @@ import CategoryCards from './component/CategoryCards';
 import { useState, useEffect } from 'react';
 
 const url = "https://newsapi.org/v2/top-headlines?country=in&apiKey=4b6387efa9a34250a128e341894ffaca&pageSize=5";
-const categories: Array<string> = ['Business', 'Entertainment', 'General', 'Health', 'Science', 'Sports', 'Technology'];
+
 
 export async function getStaticProps() {
   const result: AxiosResponse<any, any> = await axios.get(url);
@@ -27,18 +27,19 @@ type SnackBarType = {
   severity: 'success' | 'error' | 'info' | 'warning';
 }
 
-const getActiveCategoryData = (categoryData: any, activeCategory: number) => {
-  const category = categories[activeCategory];
-  const categoryDataItem: any = categoryData.find((item: any) => item.category === category);
-  return categoryDataItem && categoryDataItem.data;
-}
+
 
 export default function Home({ data }: any) {
   const [activeCategory, setActiveCategory] = useState<number>(0);
   const [categoryData, setCategoryData] = useState<any>([]);
   const [categoryLoading, setCategoryLoading] = useState<boolean>(false);
   const [snackbar, setSnackbar] = useState<SnackBarType>({ open: false, message: '', severity: 'error' });
-
+  const categories: string[] = ['Business', 'Entertainment', 'General', 'Health', 'Science', 'Sports', 'Technology'];
+  const getActiveCategoryData = (categoryData: any, activeCategory: number) => {
+    const category = categories[activeCategory];
+    const categoryDataItem: any = categoryData.find((item: any) => item.category === category);
+    return categoryDataItem && categoryDataItem.data;
+  }
   const setCategoryDataIfNeeded = (index: number) => {
     const category = categories[index];
     if (categoryData.length >= 0) {
