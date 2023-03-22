@@ -1,6 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
 import styles from '@/styles/ItemCarousel.module.css';
-import { getAuthor, getImageURL, setDefaultImageOnError, setNewsDataToLS, getImageDefaultURL } from '../utility/commonUtility';
+import { getAuthor, getImageURL, setDefaultImageOnError, setNewsDataToLS, getImageDefaultURL } from '../../utility/commonUtility';
 import { useRouter } from 'next/router';
 
 const getCarausel = (ItemCarouselData: any, sendToLocalStorage: Function) => {

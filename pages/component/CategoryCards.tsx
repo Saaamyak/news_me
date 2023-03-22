@@ -1,7 +1,7 @@
 import styles from '@/styles/CategoryCards.module.css';
 import Card from './Card';
 import Spinner from 'react-bootstrap/Spinner';
-import { getImageURL, getAuthor } from '../utility/commonUtility';
+import { getImageURL, getAuthor } from '../../utility/commonUtility';
 
 type CategoryCardsProps = {
     category: string;

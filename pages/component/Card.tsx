@@ -1,5 +1,5 @@
 import styles from '@/styles/Card.module.css';
-import { setDefaultImageOnError, setNewsDataToLS, getImageDefaultURL } from '../utility/commonUtility';
+import { setDefaultImageOnError, setNewsDataToLS, getImageDefaultURL } from '../../utility/commonUtility';
 import { useRouter } from 'next/router';
 type CardProps = {
     title: string;

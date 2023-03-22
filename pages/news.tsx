@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '@/styles/News.module.css';
 import Header from './component/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { getNewsDataFromLS, setDefaultImageOnError, getImageURL } from './utility/commonUtility';
+import { getNewsDataFromLS, setDefaultImageOnError, getImageURL } from '../utility/commonUtility';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
