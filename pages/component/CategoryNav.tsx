@@ -7,16 +7,17 @@ type categoryNavProps = {
     categories: string[];
 }
 
-function getNavItems(categories: string[]) {
-  return categories.map((category: string, index: number) => {
-    return (
-      <Nav.Item key={`categoryNav_${index}`} >
-        <Nav.Link eventKey={`link-${index}`}>{category}</Nav.Link>
-      </Nav.Item>
-    );
-  });
-}
+
 export default function CategoryNav(props: categoryNavProps) {
+  function getNavItems(categories: string[]) {
+    return categories.map((category: string, index: number) => {
+      return (
+        <Nav.Item key={`categoryNav_${index}`} >
+          <Nav.Link eventKey={`link-${index}`}>{category}</Nav.Link>
+        </Nav.Item>
+      );
+    });
+  }
   return (
     <Nav className={styles.categoryNav} fill variant="tabs" defaultActiveKey={`link-${props.activeKey}`} onSelect={props.onSelect}>
         {getNavItems(props.categories)}
