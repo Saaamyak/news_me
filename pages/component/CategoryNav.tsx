@@ -9,6 +9,7 @@ type categoryNavProps = {
 
 
 export default function CategoryNav(props: categoryNavProps) {
+  const categories: string[] = ['Business', 'Entertainment', 'General', 'Health', 'Science', 'Sports', 'Technology'];
   function getNavItems(categories: string[]) {
     return categories.map((category: string, index: number) => {
       return (
@@ -20,7 +21,7 @@ export default function CategoryNav(props: categoryNavProps) {
   }
   return (
     <Nav className={styles.categoryNav} fill variant="tabs" defaultActiveKey={`link-${props.activeKey}`} onSelect={props.onSelect}>
-        {getNavItems(props.categories)}
+        {getNavItems(categories)}
     </Nav>
   );
 }
