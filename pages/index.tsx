@@ -46,9 +46,10 @@ export default function Home({ data }: any) {
       const categoryDataItem: string = categoryData.find((item: any) => item.category === category);
       if (!categoryDataItem) {
         setCategoryLoading(true);
-        axios.get(`https://newsapi.org/v2/top-headlines?country=in&category=${category.toLowerCase()}&apiKey=4b6387efa9a34250a128e341894ffaca&pageSize=10`)
+        axios.get(`/api/category?category=${category}`)
           .then((result: AxiosResponse<any, any>) => {
-            const data: any = result.data;
+            const data: any = result.data.data;
+            console.log('data', data);
             setCategoryData([...categoryData, { category, data }]);
             setCategoryLoading(false);
           })
